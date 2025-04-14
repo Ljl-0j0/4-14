@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Spring MVC&#x7684;&#x4e3b;&#x8981;&#x7ec4;&#x4ef6;&#xff1f;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <!--
+ * @Description: 
+ * @Author: ljl
+ * @Date: 2025-04-07 17:05:59
+ * @LastEditors: rendc
+ * @LastEditTime: 2025-04-08 19:49:05
+-->
+<p><strong>试题 1</strong></p>
+<h1 id="spring-mvc的主要组件">Spring MVC的主要组件？</h1>
+<p><strong>1.前端控制器 DispatcherServlet（不需要程序员开发）</strong></p>
+<ul>
+<li>作用：接收请求、响应结果，相当于转发器，有了DispatcherServlet 就减少了其它组件之间的耦合度。</li>
+</ul>
+<p><strong>2.处理器映射器HandlerMapping（不需要程序员开发）</strong></p>
+<ul>
+<li>作用：根据请求的URL来查找Handler</li>
+</ul>
+<p><strong>3.处理器适配器HandlerAdapter</strong></p>
+<ul>
+<li>注意：在编写Handler的时候要按照HandlerAdapter要求的规则去编写，这样适配器HandlerAdapter才可以正确的去执行Handler。</li>
+</ul>
+<p><strong>4.处理器Handler（需要程序员开发）</strong></p>
+<p><strong>5.视图解析器 ViewResolver（不需要程序员开发）</strong></p>
+<ul>
+<li>作用：进行视图的解析，根据视图逻辑名解析成真正的视图（view）</li>
+</ul>
+<p><strong>6.视图View</strong></p>
+<ul>
+<li>View是一个接口， 它的实现类支持不同的视图类型（jsp，freemarker，pdf等等）</li>
+</ul>
+<p><strong>试题 2</strong></p>
+<h1 id="post请求中文乱码问题处理">POST请求中文乱码问题处理？</h1>
+<ul>
+<li>
+<p>POST 请求的中文乱码通常是由于请求体的编码未正确设置导致的。可以通过设置request对象的编码来解决。</p>
+</li>
+<li>
+<p>GET 请求的中文乱码通常是由于 URL 编码的问题。可以在服务器端对获取的参数进行解码</p>
+</li>
+</ul>
+<p><strong>试题 3</strong></p>
+<h1 id="简述用于处理不同类型的传入http请求方法的注释-">简述用于处理不同类型的传入HTTP请求方法的注释 ？</h1>
+<p>在Spring MVC中，处理不同类型的传入HTTP请求方法主要通过以下几种注释（注解）来实现：</p>
+<ul>
+<li>
+<p><strong>@GetMapping</strong>：这个注解用于处理HTTP GET请求。它通常用于检索数据。例如，当你想要从服务器获取某些信息时，你会发送一个GET请求，然后在对应的Controller方法上使用@GetMapping注解。</p>
+</li>
+<li>
+<p><strong>@PostMapping</strong>：这个注解用于处理HTTP POST请求。它通常用于提交数据，例如在表单提交时。当你在网页上填写一个表单并点击提交按钮时，浏览器会向服务器发送一个POST请求，服务器上的Controller中对应的方法会使用@PostMapping注解来处理这个请求。</p>
+</li>
+<li>
+<p><strong>@PutMapping</strong>：这个注解用于处理HTTP PUT请求。PUT请求通常用于更新资源。然而，在实际开发中，由于HTML表单不支持PUT方法，它不如POST和GET常用。但在RESTful API中，PUT请求是更新资源状态的一种常见方式。</p>
+</li>
+<li>
+<p><strong>@DeleteMapping</strong>：这个注解用于处理HTTP DELETE请求。顾名思义，它通常用于删除资源。和PUT请求类似，HTML表单也不直接支持DELETE方法，但在RESTful API中，DELETE请求用于删除资源。</p>
+</li>
+<li>
+<p><strong>@PatchMapping</strong>：这个注解用于处理HTTP PATCH请求。PATCH请求用于对资源进行部分修改。在RESTful API设计中，如果你只需要更新资源的一部分属性，而不是全部，那么可以使用PATCH请求。</p>
+</li>
+<li>
+<p><strong>@RequestMapping</strong>：这个注解是一个更通用的注解，它可以用来处理所有类型的HTTP请求。你可以通过指定method属性来限制它只处理特定类型的请求。例如，@RequestMapping(method = RequestMethod.GET)等同于@GetMapping。</p>
+</li>
+<li>
+<p>在实际应用中，你会根据业务需求和HTTP方法的语义来选择合适的注解处理请求。例如，在开发RESTful API时，你可能会频繁使用@GetMapping、@PostMapping、@PutMapping和@DeleteMapping。而在开发传统的Web应用时，@GetMapping和@PostMapping可能更加常用。</p>
+</li>
+</ul>
+<p><strong>试题 4</strong></p>
+<h1 id="spring-mvc里面拦截器是怎么写的">Spring MVC里面拦截器是怎么写的？</h1>
+<p>第一种通过实现HandleInterceptor接口，或者继承HandleInterceptor接口的实现类HandleInterceptorAdapter来定义；</p>
+<p>第二种通过实现WebRequestInterceptor接口，或继承WebRequestInterceptor接口的实现类来定义。</p>
+<p><strong>1.拦截器的定义：以实现HandleInterceptor接口为例：</strong></p>
+<pre><code>public class LoginInterceptor implements HandlerInterceptor {
+
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        //做一些操作 方法返回类型为布尔值
+        return false;
+    }
+
+    @Override
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, ModelAndView modelAndView) throws Exception {
+        //做一些操作
+    }
+
+    @Override
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+        //做一些操作
+    }
+}
+</code></pre>
+<p>从以上可以看出，自定义的拦截器类实现了HandlerInterceptor接口，并且实现了接口中的三个方法。对这三个方法解释如下：</p>
+<p><strong>（1）preHandle()方法</strong></p>
+<p>该方法会在控制器方法前执行，其返回值表示是否中断后续操作。当返回值为true时，表示继续向下执行；当返回值为false时，会中断后续的所有操作（包括调用下一个拦截器和控制器类中的方法执行等）。</p>
+<p><strong>（2）postHandle()方法</strong></p>
+<p>该方法会在控制器方法调用之后，且解析视图之前执行。可以通过此方法对请求域中的模型和视图做出进一步的修改。</p>
+<p><strong>（3）afterCompletion()方法</strong></p>
+<p>该方法会在整个请求完成，即视图渲染结束之后执行。可以通过此方法实现一些资源清理、记录日志信息等工作。</p>
+<p><strong>2.拦截器的配置</strong></p>
+<p>要使自定义的拦截器类生效，还需要在springmvc的配置文件中进行配置。配置如下所示：</p>
+ <!-- 配置拦截器 -->
+<p><a href="mvc:interceptors">mvc:interceptors</a>
+<!-- 使用bean直接定义在<mvc:interceptors>下面的Interceptor将拦截所有请求 -->
+<bean class="com.config.AllInterceptor"/></p>
+<pre><code> &lt;!-- 拦截器1 --&gt;
+ &lt;mvc:interceptor&gt;
+     &lt;!-- 配置拦截器作用的路径，/**表示拦截所有路径 --&gt;
+     &lt;mvc:mapping path=&quot;/**&quot;/&gt;   
+     &lt;!-- 配置不需要拦截器作用的路径 /admin表示放行所有以/admin结尾的路径 --&gt;
+     &lt;mvc:exclude-mapping path=&quot;/admin&quot;/&gt;    
+     &lt;!-- 定义在&lt;mvc:interceptor&gt;下面的Interceptor，表示对匹配路径的请求才进行拦截 --&gt;
+     &lt;bean class=&quot;com.config.AdminInterceptor&quot;/&gt;
+ &lt;/mvc:interceptor&gt;
+ 
+ &lt;!-- 拦截器2 --&gt;
+ &lt;mvc:interceptor&gt;
+     &lt;mvc:mapping path=&quot;/index/**&quot;/&gt;
+     &lt;bean class=&quot;com.config.IndexInterceptor&quot;/&gt;
+ &lt;/mvc:interceptor&gt;
+ 
+  &lt;!-- 后面可以配置多个拦截器--&gt;
+ &lt;/mvc:interceptors&gt;
+</code></pre>
+<p><strong>需要注意的是在进行配置拦截器时，必须按照如上的顺序进行配置，否则拦截器将失效。</strong></p>
+<p><strong>试题 5</strong></p>
+<h1 id="springspring-mvcspring-boot-之间什么关系">Spring,Spring MVC,Spring Boot 之间什么关系?</h1>
+<p><strong>Spring</strong>：Java开发框架</p>
+<p><strong>Spring MVC</strong>：是Spring框架的一个模块，在web层的开发应用</p>
+<p><strong>Spring Boot</strong>：用于简化 Spring 应用开发和部署的工具，它可以帮助开发者快速搭建基于 Spring 和 Spring MVC 的应用，提高开发效率。</p>
+<p><strong>试题 6</strong></p>
+<h1 id="请描述spring-mvc的工作流程描述一下-dispatcherservlet-的工作流程">请描述Spring MVC的工作流程？描述一下 DispatcherServlet 的工作流程？</h1>
+<ul>
+<li>
+<p>（1）用户发送请求至前端控制器DispatcherServlet；</p>
+</li>
+<li>
+<p>（2） DispatcherServlet收到请求后，调用HandlerMapping处理器映射器，请求获取Handle；</p>
+</li>
+<li>
+<p>（3）处理器映射器根据请求url找到具体的处理器，生成处理器对象及处理器拦截器(如果有则生成)一并返回给DispatcherServlet；</p>
+</li>
+<li>
+<p>（4）DispatcherServlet 调用 HandlerAdapter处理器适配器；</p>
+</li>
+<li>
+<p>（5）HandlerAdapter 经过适配调用 具体处理器(Handler，也叫后端控制器)；</p>
+</li>
+<li>
+<p>（6）Handler执行完成返回ModelAndView；</p>
+</li>
+<li>
+<p>（7）HandlerAdapter将Handler执行结果ModelAndView返回给DispatcherServlet；</p>
+</li>
+<li>
+<p>（8）DispatcherServlet将ModelAndView传给ViewResolver视图解析器进行解析；</p>
+</li>
+<li>
+<p>（9）ViewResolver解析后返回具体View；</p>
+</li>
+<li>
+<p>（10）DispatcherServlet对View进行渲染视图（即将模型数据填充至视图中）</p>
+</li>
+<li>
+<p>（11）DispatcherServlet响应用户。</p>
+</li>
+</ul>
+<p><img src="file:///c:\Users\Lenovo\Desktop\z\面试\image.png" alt="alt text"></p>
+<p><strong>试题 7</strong></p>
+<h1 id="spring-mvc和spring-boot之间的区别是什么">Spring MVC和Spring Boot之间的区别是什么？</h1>
+<p>Spring MVC和Spring Boot是Spring生态系统中的两个重要部分，它们之间的主要区别如下：</p>
+<p><strong>1.定位不同：</strong></p>
+<ul>
+<li>
+<p>Spring MVC是一个Web框架，用于构建Web应用程序。</p>
+</li>
+<li>
+<p>Spring Boot是一个基于Spring的开发框架，旨在简化Spring应用的创建和开发过程。</p>
+</li>
+</ul>
+<p><strong>2.配置方式：</strong></p>
+<ul>
+<li>
+<p>Spring MVC需要配置大量的XML或Java配置，如DispatcherServlet、视图解析器等。</p>
+</li>
+<li>
+<p>Spring Boot提供自动配置，大大简化了配置过程，无需进行繁琐的配置。</p>
+</li>
+</ul>
+<p><strong>3.嵌入式服务器：</strong></p>
+<ul>
+<li>
+<p>Spring MVC通常需要部署在外部的Servlet容器中。</p>
+</li>
+<li>
+<p>Spring Boot内嵌了Servlet容器（如Tomcat），使得应用可以独立运行。</p>
+</li>
+</ul>
+<p><strong>4.用途：</strong></p>
+<ul>
+<li>
+<p>Spring MVC主要用于Web应用的视图和控制层。</p>
+</li>
+<li>
+<p>Spring Boot可以用于各种类型的Spring应用，包括Web应用。</p>
+</li>
+</ul>
+<p><strong>试题 8</strong></p>
+<h1 id="什么是spring-mvc简单介绍下你对spring-mvc的理解以及有什么优点">什么是Spring MVC？简单介绍下你对Spring MVC的理解？以及有什么优点？</h1>
+<p>一种<strong>轻量级的</strong>、<strong>基于MVC的Web层应用框架</strong>。偏前端而不是基于业务逻辑层，是Spring框架的一个后续产品。通过把模型-视图-控制器分离，将web层进行职责解耦，把复杂的web应用分成逻辑清晰的几部分，简化开发，减少出错，方便组内开发人员之间的配合。</p>
+<p>Spring MVC是一种<strong>分层设计思想</strong>，目标是将复杂的应用系统按照分层处理进行设计和规划,通过这种设计方式达到分而治之的效果,从而降低程序开发的难度,提高代码的可维护性. Spring MVC核心类是 DispatcherServlet，它是一个 Servlet，顶层是实现的Servlet接口。</p>
+<p><strong>Spring MVC的优点：</strong></p>
+<ul>
+<li>
+<p>（1）可以支持各种视图技术,而不仅仅局限于JSP；</p>
+</li>
+<li>
+<p>（2）与Spring框架集成（如IoC容器、AOP等）；</p>
+</li>
+<li>
+<p>（3）清晰的角色分配：前端控制器(dispatcherServlet) , 请求到处理器映射（handlerMapping), 处理器适配器（HandlerAdapter), 视图解析器（ViewResolver）。</p>
+</li>
+<li>
+<p>（4）支持各种请求资源的映射策略。</p>
+</li>
+</ul>
+<p><strong>试题 9</strong></p>
+<h1 id="springmvc工作原理或流程是什么">SpringMVC工作原理或流程是什么？</h1>
+<p>Spring MVC 的工作原理和流程可以分为多个步骤，从用户请求的接收到响应的生成，每个步骤都有其特定的组件和功能。以下是 Spring MVC 的工作流程详细解析：</p>
+<h2 id="工作流程">工作流程</h2>
+<p><strong>用户请求</strong>：</p>
+<ul>
+<li>用户通过浏览器或客户端发起请求，通常是一个 HTTP 请求，包含一些参数和请求信息。</li>
+</ul>
+<p><strong>前端控制器（DispatcherServlet）</strong>：</p>
+<ul>
+<li>所有请求首先到达 DispatcherServlet，这是 Spring MVC 的中央控制器，它负责处理请求和响应的整个流程。</li>
+</ul>
+<p><strong>处理器映射器（HandlerMapping）</strong>：</p>
+<ul>
+<li>
+<p>DispatcherServlet 会根据请求的 URL 调用 HandlerMapping，查找与该请求相匹配的处理器（Handler）。</p>
+</li>
+<li>
+<p>HandlerMapping 可以通过多种方式进行匹配，如基于注解（@RequestMapping）、XML 配置等。</p>
+</li>
+</ul>
+<p><strong>处理器适配器（HandlerAdapter）</strong>：</p>
+<ul>
+<li>
+<p>一旦找到合适的处理器，DispatcherServlet 将调用 HandlerAdapter，将请求发送到找到的处理器。</p>
+</li>
+<li>
+<p>HandlerAdapter 的作用是将处理器适配到 Spring MVC 中，允许不同类型的处理器被处理。</p>
+</li>
+</ul>
+<p><strong>处理请求（Handler）</strong>：</p>
+<ul>
+<li>
+<p>所有业务逻辑都由具体的 Handler（通常是 Controller）来处理。它处理请求，执行相应的业务逻辑，并返回一个 ModelAndView 对象。</p>
+</li>
+<li>
+<p>ModelAndView 对象包含模型数据和视图的名称，模型数据将被传递到视图中进行展示。</p>
+</li>
+</ul>
+<p><strong>视图解析器（ViewResolver）</strong>：</p>
+<ul>
+<li>
+<p>DispatcherServlet 使用 ViewResolver 将 Controller 返回的视图逻辑名解析成实际的视图实现（如 JSP、Thymeleaf、FreeMarker 等）。</p>
+</li>
+<li>
+<p>视图解析器根据配置（如前缀、后缀）组合成真实的视图路径。</p>
+</li>
+</ul>
+<p><strong>生成响应（View）：</strong></p>
+<ul>
+<li>
+<p>一旦解析出视图，Spring MVC 会将模型数据传递给视图，视图将渲染出最终的 HTML 页面或其他类型的响应（如 JSON、PDF 等）。</p>
+</li>
+<li>
+<p>渲染完成后，生成的响应会返回到 DispatcherServlet。</p>
+</li>
+</ul>
+<p><strong>返回响应给用户：</strong></p>
+<ul>
+<li>DispatcherServlet 将视图的最终输出（如 HTML 页面或其他格式的响应数据）返回给用户的浏览器或客户端。
+<img src="file:///c:\Users\Lenovo\Desktop\z\面试\image-1.png" alt="alt text"></li>
+</ul>
+<p><strong>试题 10</strong></p>
+<h1 id="spring-mvc与struts2区别">Spring MVC与Struts2区别</h1>
+<ul>
+<li>
+<p><strong>相同点</strong> 都是基于mvc的表现层框架，都用于web项目的开发。</p>
+</li>
+<li>
+<p><strong>不同点</strong></p>
+<ul>
+<li>
+<p><strong>前端控制器</strong>：SpringMVC 是 Servlet（DispatcherServlet），Struts2 是 Filter（StrutsPreparedAndExcutorFilter）。</p>
+</li>
+<li>
+<p><strong>请求参数接收</strong>：SpringMVC 用方法形参，基于方法开发，线程安全，推荐单例；Struts2 用类成员变量，基于类开发，线程不安全，只能多例。</p>
+</li>
+<li>
+<p><strong>数据处理</strong>：Struts 用值栈和 OGNL 存取数据；SpringMVC 用参数解析器给方法形参赋值，封装 ModelAndView，通过 request 域传数据，Jsp 视图解析器默认用 Jstl。</p>
+</li>
+<li>
+<p><strong>与 Spring 整合</strong>：SpringMVC 是 Spring 一部分，无需整合，企业项目使用多。</p>
+</li>
+<li>
+<p><strong>Struts2 特点</strong>：类级别拦截，每次请求创建 action，属性被方法共享，只能多例，无法用注解开发，有线程安全问题。通过类属性或模型驱动接收参数，用值栈和 OGNL 获取值，有自定义拦截机制，配置文件大。</p>
+</li>
+<li>
+<p><strong>Spring MVC 特点</strong>：方法级别拦截，请求对应方法，参数封装到方法参数，对象参数加 @RequestBody。controller 默认单例，可用注解开发。通过方法参数 model 设返回值，页面用 el 表达式获取，有独立 AOP 拦截机制。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>试题 11</strong></p>
+<h1 id="拦截器执行流程">拦截器执行流程？</h1>
+<ul>
+<li><strong>单个拦截器</strong>：程序先执行拦截器的 preHandle() 方法，返回 true 则继续执行处理器方法，否则停止。业务处理器处理完请求后，执行 postHandle() 方法，接着 DispatcherServlet 返回响应，最后执行 afterCompletion() 方法。执行流程为：preHandle() → 控制器方法 → postHandle() → afterCompletion()。
+<img src="file:///c:\Users\Lenovo\Desktop\z\面试\image-2.png" alt="alt text"></li>
+<li><strong>多个拦截器</strong>：以 Spring MVC 配置文件中配置 Interceptor1 和 Interceptor2 且 Interceptor1 在前为例，preHandle() 方法按配置顺序执行，postHandle() 和 afterCompletion() 方法按配置顺序反序执行。执行流程为：preHandle1 → preHandle2 → 控制器方法 → postHandle2 → postHandle1 → afterCompletion2 → afterCompletion1 。即多个拦截器时，preHandle 按次序执行，其余方法反序执行。
+<img src="file:///c:\Users\Lenovo\Desktop\z\面试\image-3.png" alt="alt text"></li>
+</ul>
+<p><strong>试题 12</strong></p>
+<h1 id="简述spring-mvc中pathvariable注释的作用-">简述Spring MVC中@PathVariable注释的作用 ？</h1>
+<p>在 Spring MVC 里，@PathVariable 注解可将 URL 中的模板变量（URI 变量）绑定到控制器方法参数。当使用 RESTful 风格 URL，其中部分内容随用户请求变化，且要将变化部分作为参数传入控制器方法时，可使用该注解。
+例如，获取特定用户信息的 URL 为 /users/575，其中 575 是 URI 变量。当接收到 /users/123 请求时，123 就是 userId 的具体值。在控制器方法中使用 @PathVariable 注解获取该值：
+@RequestMapping(value = &quot;/users/575&quot;, method = RequestMethod.GET)
+public String getUser(@PathVariable(&quot;userId&quot;) Long userId, Model model) {
+// 用 userId 获取用户信息并添加到模型
+return &quot;userDetails&quot;;
+}
+这里 @PathVariable(&quot;userId&quot;) 会让 Spring MVC 从 URL 提取对应值，转为 Long 类型后传给 userId 参数。
+若 URI 变量名和方法参数名相同，可省略 @PathVariable 中的值：
+java
+@RequestMapping(value = &quot;/users/575&quot;, method = RequestMethod.GET)
+public String getUser(@PathVariable Long userId, Model model) {
+// ...
+return &quot;userDetails&quot;;
+}</p>
+<p>此时 Spring MVC 会自动匹配 URI 变量和方法参数。</p>
+
+            
+            
+        </body>
+        </html>

@@ -3,7 +3,7 @@
  * @Author: ljl
  * @Date: 2025-04-14 16:54:28
  * @LastEditors: rendc
- * @LastEditTime: 2025-04-14 17:04:43
+ * @LastEditTime: 2025-04-16 10:20:13
 -->
 
 # 【HTML基础】
@@ -207,7 +207,7 @@ HTML 标签通常是成对出现的，例如：`<html>` 和 `</html>`，我们�
 
 **网页 title 示例：**
 
-![](mark-img/image-20220115163652252.png)
+![](img/image.png)
 
 ## 2.3 网页开发工具
 
@@ -342,7 +342,7 @@ HTML 提供了 6 个等级的网页标题，即：`<h1>` 到 `<h6>`。
 <h6>六级标题</h6>
 ```
 
-<img src="mark-img/image-20220115165012637.png" style="width: 30%;" />
+<img src="img/image3.png" style="width: 50%;" />
 
 > 单词 head 的缩写，意为：头部、标题。
 
@@ -378,10 +378,7 @@ HTML 提供了 6 个等级的网页标题，即：`<h1>` 到 `<h6>`。
 - 段落和段落之间保有空隙（段间距）
 
 - 同一段落里的不同行文字之间也有一定的空隙（行间距）
-
-![](mark-img/d9b00c3588a14988a0eee7baf8782ca3.png)
-
-在 HTML 中，一个段落中的文字会从左到右依次排列，直到浏览器窗口的右端，然后才自动换行。
+img/image4左到右依次排列，直到浏览器窗口的右端，然后才自动换行。
 
 如果希望某段文本强制换行显示，就需要使用换行标签 `<br>`。
 
@@ -405,7 +402,7 @@ HTML 提供了 6 个等级的网页标题，即：`<h1>` 到 `<h6>`。
 <!-- 某些时候需要对内容块进行分割时会用到分割线标签 -->
 ```
 
-![](mark-img/2d74ab3a559a4df5b69a32aa0bc5dd09.png)
+![](img/image4.png)
 
 > 注意：实际开发中并不常用 hr 作为分割线，而是使用 CSS 盒子模型中的边框来实现分割线效果，或是利用一个空盒子设置长宽高及背景颜色来实现分割线效果。
 
@@ -504,7 +501,7 @@ HTML 提供了 6 个等级的网页标题，即：`<h1>` 到 `<h6>`。
 
 - 网络地址
 
-   `https://github.com/JERRY-Z-J-R/I-love-you-3-thousand/raw/master/mark-img/I-Love-You.gif`
+   `https://github.com/Ljl-0j0/4-14/blob/master/html.md`
 
 **注意：**
 
@@ -579,7 +576,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 
 ## 2.6 表格标签
 
-![](mark-img/image-20220121161018164.png)
+![](img/image5.png)
 
 ### 2.6.1 表格的主要作用
 
@@ -734,7 +731,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 </html>
 ```
 
-<img src="mark-img/20210405002235373.jpg" style="width:50%;" />
+<img src="img/image6.png" style="width:50%;" />
 
 【综合案例】
 
@@ -786,7 +783,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 </html>
 ```
 
-![](mark-img/699b0d89c1727c05e1a200e21867c8e5-16422502360695.png)
+![](img/image7.png)
 
 ## 2.7 列表标签
 
@@ -810,19 +807,19 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 
 - 无序列表
 
-![](mark-img/20210405004003554.jpg)
+![](img/image8.png)
 
-![](mark-img/20210405004003542.jpg)
+![](img/image9.png)
 
 - 有序列表
 
 > 注意：微博热搜是为方便理解举例，实际上此处并非使用有序列表！
 
-![](mark-img/20210405004003545.jpg)
+![](img/image10.png)
 
 - 自定义列表
 
-![](mark-img/20210405004003460.jpg)
+![](img/image11.png)
 
 ### 2.7.1 无序列表
 
@@ -844,7 +841,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 - `<li>` 与 `</li>` 之间相当于一个容器，可以容纳所有的元素
 - 无序列表会带有自己的样式属性（比如圆点），但在实际开发中，我们会使用 CSS 来设置
 
-<img src="mark-img/20210409111633420-16422555387621.jpg" style="width:30%;" />
+<img src="img/image12.png" style="width:30%;" />
 
 > 附：去除 li 前符号的方法：`style="list-style: none;"`
 
@@ -869,7 +866,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 - `<li>` 与 `</li>` 之间相当于一个容器，可以容纳所有的元素
 - 有序列表会带有自己样式属性（比如序号），但在实际使用时，我们会使用 CSS 来设置
 
-<img src="mark-img/20210409111633549-16422555479543.jpg" style="width:30%;" />
+<img src="img/image13.png" style="width:23%;" />
 
 > 附：去除 li 前符号的方法：`style="list-style: none;"`
 
@@ -896,7 +893,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 - `<dl>` `</dl>` 里面只包含 `<dt>`、`<dd>`
 - `<dt>` 和 `<dd>` 个数没有限制，经常是一个 `<dt>` 对应多个 `<dd>`
 
-<img src="mark-img/20210409111710669-16422555546745.jpg" style="zoom:50%;" />
+<img src="img/image14.png" style="zoom:30%;" />
 
 ## 2.8 表单标签
 
@@ -969,7 +966,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 </head>
 
 <body>
-    <form action="http://127.0.0.1:8080/" method="GET">
+    <form action="http://127.0.0.1:5500/" method="GET">
         姓名：<input type="text" name="name">
         <input type="submit">
     </form>
@@ -978,9 +975,8 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 </html>
 ```
 
-<img src="mark-img/06b66d16e62dca2951179ec536cc484a.png" style="width:60%;" />
+<img src="img/image15.png" style="width:80%;" />
 
-<img src="mark-img/a280fd4d6fbdc45784adf7627e4a679e.png" style="width:60%;" />
 
 【POST案例】
 
@@ -996,7 +992,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 </head>
 
 <body>
-    <form action="http://127.0.0.1:8080/" method="POST">
+    <form action="http://127.0.0.1:5500/" method="POST">
         姓名：<input type="text" name="name">
         <input type="submit">
     </form>
@@ -1005,9 +1001,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 </html>
 ```
 
-<img src="mark-img/06b66d16e62dca2951179ec536cc484a-164225152462516.png" style="width:60%;" />
-
-<img src="mark-img/2666b32b23643c2c8959491a1989a5af.png" style="width:60%;" />
+<img src="img/image16.png" style="width:80%;" />
 
 ### 2.8.4 表单控件（表单元素）
 
@@ -1071,8 +1065,8 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 > </head>
 > 
 > <body>
-> <form action="http://127.0.0.1:8080/" method="get">
->     <input type="hidden" name="name" value="周吉瑞">
+> <form action="http://127.0.0.1:5500/" method="get">
+>     <input type="hidden" name="name" value="lalala">
 >     <input type="submit">
 > </form>
 > 
@@ -1081,9 +1075,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 > </html>
 > ```
 >
-> <img src="mark-img/685d11e4bfbb4d8094e722211359c634.png" style="width:60%;" />
->
-> <img src="mark-img/e6d3e820f2a14536b44b4dec9b7ab3c1.png" style="width:60%;" />
+> <img src="img/image17.png" style="width:80%;" />
 
 **除 type 属性外，`<input>` 标签还有很多其他属性，其常用属性如下：**
 
@@ -1164,8 +1156,6 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 
 **核心：** `<label>` 标签的 for 属性应当与相关元素的 id 属性相同。
 
-<img src="mark-img/20210409111229906-164225496209822.gif" style="zoom:50%;" />
-
 **（2）\<select> 表单元素**
 
 **使用场景：**在页面中，如果有多个选项让用户选择，并且想要节约页面空间时，我们可以使用 `<select>` 标签控件定义下拉列表。
@@ -1241,18 +1231,24 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 
 ```html
 <!doctype html>
-<html lang="zh-CN">
+<!-- 告诉浏览器 Html的版本是H5 -->
+<!DOCTYPE html>
+<!-- 语言 English -->
+<html lang="en">
+<!-- 文档的头部 在网页视口区看不到-->
 
 <head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>恋爱小窝-注册页面</title>
+  <!-- 信息标签 字符编码格式 -->
+  <meta charset="UTF-8">
+  <!-- 可使用的宽度为视口宽度 初始缩放比例为1 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 文档的标题 在选项卡上面显示 -->
+    <title>注册页面</title>
 </head>
 
 <body>
 <!-- 标题 -->
-<h2>青春不常在，抓紧谈恋爱</h2>
+<h2>fiting！！！！！</h2>
 
 <!-- 表单域 -->
 <!-- <form action="" method="" name="lovetable"> -->
@@ -1265,10 +1261,10 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
         <td>性别</td>
         <td>
             <label for="man">
-                <input id="man" type="radio" name="sex"><img src="../image/man.png" width="15">男
+                <input id="man" type="radio" name="sex">男
             </label>
             <label for="women">
-                <input id="women" type="radio" name="sex"><img src="../image/women.png" width="15">女
+                <input id="women" type="radio" name="sex">女
             </label>
         </td>
     </tr>
@@ -1277,27 +1273,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
     <tr>
         <td>生日</td>
         <td>
-            <select>
-                <option>--请选择年--</option>
-                <option selected="selected">2021</option>
-                <option>2020</option>
-                <option>2019</option>
-                <option>2018</option>
-            </select>
-            <select>
-                <option>--请选择月--</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select>
-            <select>
-                <option>--请选择日--</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select>
+            <input class="day" type="date" name="birth">
         </td>
     </tr>
 
@@ -1305,7 +1281,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
     <tr>
         <td>所在地区</td>
         <td>
-            <input type="text" value="云南玉溪">
+            <input type="text" value="In the area">
         </td>
     </tr>
 
@@ -1329,19 +1305,19 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
     <tr>
         <td>学历</td>
         <td>
-            <input type="text" value="幼儿园">
+            <input type="text" value="学无止境">
         </td>
     </tr>
 
     <!-- 第六行 -->
     <tr>
-        <td>喜欢的类型</td>
+        <td>喜欢的运动</td>
         <td>
-            <input type="checkbox" name="love">妩媚的
-            <input type="checkbox" name="love">可爱的
-            <input type="checkbox" name="love">小鲜肉
-            <input type="checkbox" name="love">老腊肉
-            <input type="checkbox" name="love" checked="checked">都喜欢
+            <input type="checkbox" name="like">足球
+            <input type="checkbox" name="like">篮球
+            <input type="checkbox" name="like">台球
+            <input type="checkbox" name="like">乒乓球
+            <input type="checkbox" name="like" checked="checked">都喜欢
         </td>
     </tr>
 
@@ -1383,9 +1359,8 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
         <td>
             <h4>我承诺</h4>
             <ul>
-                <li>年满18岁、单身</li>
+                <li>好好学习</li>
                 <li>抱着严肃的态度</li>
-                <li>真诚寻找另一半</li>
             </ul>
         </td>
     </tr>
@@ -1398,11 +1373,11 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 
 **效果：**
 
-<img src="mark-img/2021040501112593-164225533222026.png" style="width:50%;" />
+<img src="img/image19.png" style="width:50%;" />
 
 **本质：**
 
-<img src="mark-img/20210405011125140-16422553843201.png" style="width:50%;" />
+<img src="img/image20.png" style="width:60%;" />
 
 ## 2.10 内联框架
 
@@ -1430,7 +1405,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 <iframe src="https://www.bilibili.com/" width="70%" height="500px"></iframe>
 ```
 
-![](mark-img/image-20220121173139191.png)
+![](img/139191.png)
 
 > **提示：**您可以把需要的文本放置在 `<iframe>` 和 `</iframe>` 之间，这样就可以应对不支持 `<iframe>` 的浏览器。
 >
@@ -1465,7 +1440,7 @@ HTML 中的注释以：`<!--` 开头，以 `-->` 结束。
 
 SEO（Search Engine Optimization）：汉译为**搜索引擎优化**。是一种方式：利用[搜索引擎](https://baike.baidu.com/item/搜索引擎/104812)的规则提高网站在有关搜索引擎内的[自然排名](https://baike.baidu.com/item/自然排名/2092669)。目的是让其在行业内占据领先地位，获得[品牌](https://baike.baidu.com/item/品牌/235720)收益。很大程度上是网站经营者的一种商业行为，将自己或自己公司的排名前移。（百度百科）
 
-![](mark-img/image-20220214165430495.png)
+![](img/430495.png)
 
 > 外链：链接到外部网页的链接，外链不是越多越好，而是外链的质量越高、越合理、越方便越好。
 >

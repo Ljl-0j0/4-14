@@ -307,9 +307,9 @@ h1 {
 </head>
 
 <body>
-    <div class="red"></div>
-    <div class="green"></div>
-    <div class="red"></div>
+    <div class="red"> 红红红 </div>
+    <div class="green"> 绿绿绿 </div>
+    <div class="red"> 我也是红色 </div>
 </body>
 
 </html>
@@ -345,7 +345,7 @@ h1 {
 </head>
 
 <body>
-    <div class="red font35">zhoujirui</div>
+    <div class="red font35">lalal</div>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
  * @Author: ljl
  * @Date: 2025-04-08 09:11:24
  * @LastEditors: rendc
- * @LastEditTime: 2025-04-15 10:13:23
+ * @LastEditTime: 2025-04-18 09:40:08
 -->
 <!-- [TOC] -->
 - [前端](#前端)
@@ -24,9 +24,9 @@ https://pan.baidu.com/s/1P-fQfTXSDwfVHj6apWAW4w?pwd=8888#list/path=%2F&parentPat
 
 **1.HTML/CSS/JavaScript**
 
-* [HTML](HTML基础\html.md)：熟悉语义化标签、表单元素及HTML5新特性（如Canvas、本地存储）。
+* HTML：熟悉语义化标签、表单元素及HTML5新特性（如Canvas、本地存储）。
 
-* [CSS]()：掌握盒模型、Flex/Grid布局、CSS3动画及响应式设计（媒体查询）。
+* CSS：掌握盒模型、Flex/Grid布局、CSS3动画及响应式设计（媒体查询）。
 
 * JavaScript：理解闭包、原型链、事件循环、异步编程（Promise、async/await）及ES6+语法。
 
@@ -65,15 +65,15 @@ https://pan.baidu.com/s/1P-fQfTXSDwfVHj6apWAW4w?pwd=8888#list/path=%2F&parentPat
 
 ---
 ## Web前端工程师岗位要求
-1. 熟练运用 HTML、CSS、JavaScript 构建高性能的Web应用程序，能很好解决兼容问题；
+- [ ] 熟练运用 HTML、CSS、JavaScript 构建高性能的Web应用程序，能很好解决兼容问题；
 
-2. 熟练运用Vue、Node.js等主流前端框架，熟悉TS、JSX语法，有良好的JS功底，能进行原生JS开发；
+- [ ] 熟练运用Vue、Node.js等主流前端框架，熟悉TS、JSX语法，有良好的JS功底，能进行原生JS开发；
 
-3. 熟练运用Webpack、VITE、GULP、require.js、Git等工具的使用方法与流程；
+- [ ] 熟练运用Webpack、VITE、GULP、require.js、Git等工具的使用方法与流程；
 
-4. 掌握各种常用Web开发调试工具，熟悉网络、浏览器等原理；
+- [ ] 掌握各种常用Web开发调试工具，熟悉网络、浏览器等原理；
 
-5. 熟悉 HTTP、HTTPS 等常见网络协议，对 web性能优化、常见漏洞有深入的理解；
+- [ ] 熟悉 HTTP、HTTPS 等常见网络协议，对 web性能优化、常见漏洞有深入的理解；
 
 
 # 信息与计算科学

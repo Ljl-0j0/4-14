@@ -3,13 +3,31 @@
  * @Author: ljl
  * @Date: 2025-04-17 14:47:35
  * @LastEditors: rendc
- * @LastEditTime: 2025-04-17 19:53:29
+ * @LastEditTime: 2025-04-21 19:34:48
 -->
 # 【CSS盒子模型】
 
 页面布局要学习**三大核心**：**盒子模型**、**浮动**和**定位**。
 
 学习好盒子模型能非常好的帮助我们布局页面。
+- [【CSS盒子模型】](#css盒子模型)
+- [一、看透网页布局的本质](#一看透网页布局的本质)
+- [二、盒子模型（Box Model）组成](#二盒子模型box-model组成)
+- [三、边框（border）](#三边框border)
+    - [3.1 表格的细线边框](#31-表格的细线边框)
+    - [3.2 边框会影响盒子实际大小](#32-边框会影响盒子实际大小)
+- [四、内边距（padding）](#四内边距padding)
+- [五、外边距（margin）](#五外边距margin)
+    - [5.1 外边距合并](#51-外边距合并)
+        - [5.1.1 相邻块元素垂直外边距的合并](#511-相邻块元素垂直外边距的合并)
+        - [5.1.2 嵌套块元素垂直外边距的塌陷](#512-嵌套块元素垂直外边距的塌陷)
+- [六、清除内外边距](#六清除内外边距)
+- [七、案例](#七案例)
+- [八、总结](#八总结)
+        - [a、布局为啥用不同盒子，我只想用 div？](#a布局为啥用不同盒子我只想用-div)
+        - [b、为啥用那么多类名？](#b为啥用那么多类名)
+        - [c、到底用 margin 还是 padding？](#c到底用-margin-还是-padding)
+        - [d、自己做没有思路？](#d自己做没有思路)
 
 # 一、看透网页布局的本质
 
@@ -753,7 +771,7 @@ padding 的使用技巧：
         .father {
             width: 400px;
             height: 400px;
-            background-color: black;
+            background-color: purple;
             margin-top: 50px;
         }
 
@@ -775,7 +793,8 @@ padding 的使用技巧：
 </html>
 ```
 
-![](img/.gif)
+![](img/image14.png)
+![](img/image15.png)
 
 ---
 
@@ -816,7 +835,7 @@ padding 的使用技巧：
 </html>
 ```
 
-<img src="img/-164227252890423.jpg" style="width:40%;" />
+<img src="img/image16.png" style="width:40%;" />
 
 **注意：外边距的合并在利用盒子布局页面的时候是经常发生的！**
 
@@ -835,7 +854,7 @@ padding 的使用技巧：
 
 # 七、案例
 
-![](img/.jpg)
+![](img/image17.png)
 
 ```html
 <!doctype html>
@@ -933,7 +952,7 @@ padding 的使用技巧：
 </html>
 ```
 
-<img src="img/.jpg" style="width:30%;" />
+<img src="img/image18.png" style="width:50%;" />
 
 ```html
 <!doctype html>
@@ -1012,7 +1031,7 @@ padding 的使用技巧：
 </html>
 ```
 
-<img src="img/.gif" style="width:40%;" />
+<img src="img/image19.png" style="width:40%;" />
 
 # 八、总结
 

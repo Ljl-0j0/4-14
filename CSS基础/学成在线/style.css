@@ -1,0 +1,298 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.w{
+    width: 1200px;
+    margin: auto;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+body{
+    background-color: 244, 245, 247;
+}
+
+/* header区域 */
+.header{
+    height: 42px;
+    margin: 30px auto;
+}
+.logo{
+    float: left;
+    width: 198px;
+    height: 42px;
+}
+.nav{
+    float: left;
+    margin-left: 60px;
+}
+.nav li{
+    float: left;
+    margin: 0 15px;
+}
+.nav li a{
+    display: block;
+    height: 42px;
+    padding: 0 20px;
+    line-height: 42px;
+    font-size: 18px;
+    color: #050505;
+}
+.nav li a:hover{
+    color: #00a4ff;
+    border-bottom: 2px solid #00a4ff;
+}
+.search{
+    float: left;
+    width: 412px;
+    height: 42px;
+    margin-left: 60px;
+}
+.search input{
+    float: left;
+    width: 345px;
+    height: 40px;
+    border: 1px solid #00a4ff;
+    padding-left: 15px;
+    color: #bfbfbf;
+    font-size: 14px;
+    border-right: 0;
+}
+.search button{
+    float: left;
+    width: 50px;
+    height: 42px;
+    border: 0;
+    background: url(images/btn.png);
+}
+.user{
+    float: right;
+    line-height: 42px;
+    margin-right: 30px;
+    font-size: 14px;
+    color: #666;
+}
+/* banner区域 */
+.banner{
+    height: 421px;
+    background-color: #1c036c;
+}
+.banner .w{
+    height: 421px;
+    background: url(images/banner2.png);
+}
+.subnav{
+    float: left;
+    width: 190px;
+    height: 421px;
+    background-color: rgba(0,0,0,0.3);
+}
+.subnav ul li{
+    height: 45px;
+    line-height: 45px;
+    padding: 0 20px;
+}
+.subnav ul li a{
+    font-size: 16px;
+    color: #fff;
+}
+.subnav ul li a span{
+    float: right;
+}
+.subnav ul li a:hover{
+    color: #00a4ff;
+}
+.course{
+    float: right;
+    height: 300px;
+    width: 230px;
+    background-color: #fff;
+    margin-top: 50px;
+}
+.course h2{
+    height: 48px;
+    font-size: 18px;
+    background-color: #9bceea;
+    line-height: 48px;
+    color: #fff;
+    text-align: center;
+}
+.bd{
+    padding: 0 20px;
+}
+.bd ul li{
+    padding: 12px 0;
+    border-bottom: 2px solid #ccc;
+}
+.bd ul li h4{
+    font-size: 16px;
+    color: #4e4e4e;
+}
+.bd ul li p{
+    font-size: 12px;
+    color: #a5a5a5;
+}
+.bd .more{
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    border: 2px solid #00a4ff;
+    color: #00a4ff;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* 精品推荐模块 */
+.goods{
+    height: 60px;
+    background-color: #fff;
+    margin-top: 10px;
+    box-shadow: 0px 20px 20px -15px rgba(0, 0, 0, 0.1);
+    /* 行高会继承， 会继承给3个孩子 */
+    line-height: 60px;
+}
+.goods h3{
+    float: left;
+    font-size: 16px;
+    color: #00a4ff;
+    margin-left: 30px;
+}
+.goods ul{
+    float: left;
+    margin-left: 30px;
+}
+.goods ul li{
+    float: left;
+}
+.goods ul li a{
+    color: #050505;
+    font-size: 16px;
+    padding: 0 30px;
+    border-left: 2px solid #e5e5e5;
+}
+.goods ul li a:hover{
+    color: #00a4ff;
+}   
+.mod{
+    float: right;
+    padding: 0 30px;
+    color: #00a4ff;
+    font-size: 14px;
+}
+
+/* 内容课程 */
+.box{
+    padding-top: 30px;
+}
+.box-hd{
+    height: 45px;
+    line-height: 45px;
+}
+.box-hd h3{
+    float: left;
+    font-size: 20px;
+    color: #050505;
+}
+.box-hd a{
+    float: right;
+    font-size: 14px;
+    color: #c1c1c1;
+    margin: 0 30px;
+}
+.box-bd ul{
+    width: 1225px;
+}
+.box-bd ul li{
+    float: left;
+    width: 228px;
+    height: 270px;
+    background-color: #f5f5f5;
+    margin-right: 15px;
+    margin-bottom: 15px;
+}
+.box-bd img{
+    width: 100%;
+}
+.box-bd h4{
+    font-size: 14px;
+    color: #050505;
+    margin: 20px;
+    /* font-weight: 400; */
+}
+.box-bd .info{
+    font-size: 12px;
+    color: #999;
+    margin: 0 20px;
+}
+.box-bd .info span{
+    color: #ff6600;
+}
+
+/* 底部 */
+.footer{
+    height: 415px;
+    background-color: #f5f5f5;
+}
+.footer .w{
+    /* 注意：此处对 footer 里的 w 设置 margin 会发生外边距塌陷， 
+    因为，w 包含在 footer 中，w 的上外边距为 35px，footer 的外边距为 0px， 
+    此时发生外边距塌陷，父元素塌陷较大的外边距值 35px*/
+    /* margin-top: 35px; */
+    padding-top: 35px;
+    /* padding 不会发生边距合并 */
+}
+.footer-left{
+    float: left;
+}
+.footer-left p{
+    font-size: 14px;
+    color: #999;
+    margin: 20px 0 15px 0;
+}
+.footer-left .app{
+    display: block;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 2px solid #00a4ff;
+    color: #00a4ff;
+}
+.footer-right{
+    float: right;
+}
+.footer-right dl{
+    float: left;
+    margin-left: 100px;
+}
+.footer-right dl dt{
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+.footer-right dl dd a{
+    color: #333;
+    font-size: 14px;
+}
+.footer-right dl dd a:hover{
+    color: pink;
+}

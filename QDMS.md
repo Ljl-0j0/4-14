@@ -3,7 +3,7 @@
  * @Author: ljl
  * @Date: 2025-04-18 09:41:08
  * @LastEditors: rendc
- * @LastEditTime: 2025-04-18 10:28:29
+ * @LastEditTime: 2025-04-23 19:43:30
 -->
 # HTML & CSS
 - [ ] **盒模型（Box Model）是什么？如何控制元素的最总渲染尺寸？**
@@ -52,8 +52,32 @@
 >       - 解构赋值、模板字符串
 >       - 模块化（import/export）
 ---
-> 
-> 
->
+# 框架与工具
+- [ ] **React vs Vue设计哲学差异**
+>   - **答案：**
+>       - React：函数式编程、JSX高度灵活、状态管理依赖外部库（Redux）。
+>       - Vue：渐进式框架、模板语法更容易上手、内置响应式系统、路由等。
+- [ ] **虚拟DOM（Virtual DOM）的作用**
+>   - **答案：**
+>       通过JS对象模拟真实DOM，通过Diff算法计算最小更新范围，减少直接操作DOM的性能消耗。
+- [ ] **Webpack核心概念**
+>   - **答案：**
+>       - Entry：入口起点，默认为`src/index.js`，可以指定多个。
+>       - Output：输出路径，默认为`dist`，可以指定多个。
+>       - Loader：处理非JS文件（如CSS、图片等）。
+>       - Plugin：扩展Webpack的功能，如打包优化、压缩等。
+>       - Tree Shaking：去除无用代码。
+# 性能优化
+- [ ] **首屏加载优化方案**
+>   - **答案：**
+>       - 代码分割（Code Splitting）
+>       - 图片懒加载 + webP格式
+>       - CDN加速静态资源
+>       - 服务端渲染（SSR）
+>       - 减少重排/重绘（使用transform代替top/left）
+- [ ] **浏览器缓存策略**
+>   - **答案：**
+>       - **强缓存：** Cache-Control（max-age）、Expires
+>       - **协商缓存：** Last-Modified/If-Modified-Since、ETag/If-None-Match
 >
 

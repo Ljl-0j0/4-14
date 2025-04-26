@@ -3,7 +3,7 @@
  * @Author: ljl
  * @Date: 2025-04-23 20:16:10
  * @LastEditors: rendc
- * @LastEditTime: 2025-04-24 17:27:45
+ * @LastEditTime: 2025-04-26 10:22:04
 -->
 # 【CSS精灵图、字体图标、三角、鼠标样式、用户界面样式、溢出省略号】
 - [【CSS精灵图、字体图标、三角、鼠标样式、用户界面样式、溢出省略号】](#css精灵图字体图标三角鼠标样式用户界面样式溢出省略号)
@@ -292,28 +292,28 @@ span {
   <style>
     /* 字体声明 */
     @font-face {
-    	font-family: 'icomoon';
-      	src: url('fonts/icomoon.eot?p4ssmb');
-      	src: url('fonts/icomoon.eot?p4ssmb#iefix') format('embedded-opentype'),
-        url('fonts/icomoon.ttf?p4ssmb') format('truetype'),
-        url('fonts/icomoon.woff?p4ssmb') format('woff'),
-        url('fonts/icomoon.svg?p4ssmb#icomoon') format('svg');
-      	font-weight: normal;
-      	font-style: normal;
-      	font-display: block;
+        font-family: 'icomoon';
+        src:  url('fonts/icomoon.eot?qmzf4o');
+        src:  url('fonts/icomoon.eot?qmzf4o#iefix') format('embedded-opentype'),
+            url('fonts/icomoon.ttf?qmzf4o') format('truetype'),
+            url('fonts/icomoon.woff?qmzf4o') format('woff'),
+            url('fonts/icomoon.svg?qmzf4o#icomoon') format('svg');
+        font-weight: normal;
+        font-style: normal;
+        font-display: block;
     }
 
-    span {
-      font-family: 'icomoon';
-      font-size: 100px;
-      color: salmon;
+    span{
+        font-family: "icomoon";
+        display: inline-block;
+        color: purple;
+        font-size: 100px;
     }
   </style>
 </head>
 
 <body>
-  <span>?</span>
-  <span>?</span>
+      <span>?</span>
 </body>
 
 </html>
@@ -336,57 +336,50 @@ CSS 三角是怎么来的？原理如下：
 通常 CSS 三角要配合定位来布局。
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CSS 三角制作</title>
+    <title>Document</title>
     <style>
-        .box1 {
+        .box1{
             width: 0;
             height: 0;
-            /* border: 10px solid pink; */
-            border-top: 30px solid hotpink;
-            border-right: 30px solid black;
-            border-bottom: 30px solid skyblue;
-            border-left: 30px solid gray;
+            border-top: 10px solid pink;
+            border-right: 10px solid skyblue;
+            border-bottom: 10px solid purple;
+            border-left: 10px solid red;
         }
-
-        .box2 {
+        .box2{
             width: 0;
             height: 0;
             border: 50px solid transparent;
-            border-left-color: black;
-            margin: 50px;
+            /* border-top-color: pink; */
+            border-right-color: skyblue;
+            margin: 100px auto;
         }
-
-        .jd {
-            /* 子绝父相 */
+        .jd{
             position: relative;
             width: 120px;
             height: 249px;
-            background-color: black;
+            background-color: antiquewhite;
         }
-
-        .jd span {
-            /* 子绝父相 */
+        .jd span{
             position: absolute;
             right: 15px;
             top: -20px;
             width: 0;
             height: 0;
-            /* 下面两行为了照顾兼容性 */
+            /* 为了考虑兼容性 */
             line-height: 0;
             font-size: 0;
             border: 10px solid transparent;
-            border-bottom-color: black;
+            border-bottom-color: antiquewhite;
         }
     </style>
 </head>
-
 <body>
     <div class="box1"></div>
     <div class="box2"></div>
@@ -394,7 +387,6 @@ CSS 三角是怎么来的？原理如下：
         <span></span>
     </div>
 </body>
-
 </html>
 ```
 
@@ -478,8 +470,13 @@ input { outline: none; }
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>轮廓线 outline</title>
     <style>
-        input {
-            /* 取消表单轮廓 */
+        /* 取消轮廓线 */
+        input{
+            outline: none;
+        }
+        textarea{
+            /* 禁止调整大小 */
+            resize: none;
             outline: none;
         }
     </style>
@@ -488,12 +485,11 @@ input { outline: none; }
 <body>
     <!-- 取消表单轮廓 -->
     <input type="text">
+    <textarea name="" id="" cols="30" rows="10"></textarea>
 </body>
 
 </html>
 ```
-
-![](img/20210420111315285.gif)
 
 ## 4.4 防止拖拽文本域 resize
 
@@ -505,7 +501,7 @@ textarea { resize: none; }
 
 默认样式：
 
-![](img/2021042011203862.gif)
+![](img/6.gif)
 
 修改后样式：
 
@@ -538,7 +534,7 @@ textarea { resize: none; }
 </html>
 ```
 
-![](img/202104201120370.gif)
+![](img/20210420111315285.gif)
 
 # 五、vertical-align 属性应用
 
@@ -632,6 +628,7 @@ vertical-align: baseline | top | middle | bottom
         }
 
         img {
+            /* 两种方法 */
             vertical-align: middle;
             /* display: block; */
         }

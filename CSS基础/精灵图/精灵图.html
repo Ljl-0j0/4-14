@@ -3,20 +3,49 @@
  * @Author: ljl
  * @Date: 2025-04-24 18:38:57
  * @LastEditors: rendc
- * @LastEditTime: 2025-04-24 18:53:55
+ * @LastEditTime: 2025-04-25 09:57:25
 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>精灵图 - 名字</title>
+    <title>精灵图 - 字体图标</title>
     <style>
-        span{
-            display: inline-block;
-            background: url(./images/1.jpg);
+        /* icomoon 字库 https://icomoon.io/ */
+        /* @font-face {
+            font-family: 'icomoon';
+            src:  url('fonts/icomoon.eot?qmzf4o');
+            src:  url('fonts/icomoon.eot?qmzf4o#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?qmzf4o') format('truetype'),
+                url('fonts/icomoon.woff?qmzf4o') format('woff'),
+                url('fonts/icomoon.svg?qmzf4o#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        } */
+
+        /* 阿里 iconfont 字库 https://www.iconfont.cn/ */
+        @font-face {
+            font-family: 'iconfont';  /* Project id 4905076 */
+            src: url('//at.alicdn.com/t/c/font_4905076_jc9zeyx5cra.woff2?t=1745546053414') format('woff2'),
+                url('//at.alicdn.com/t/c/font_4905076_jc9zeyx5cra.woff?t=1745546053414') format('woff'),
+                url('//at.alicdn.com/t/c/font_4905076_jc9zeyx5cra.ttf?t=1745546053414') format('truetype');
         }
-        .l{
+
+        span{
+            /* icomoon */
+            /* font-family: "icomoon";
+            
+            /* 阿里 */
+            font-family: 'iconfont';  /* Project id 4905076 */
+            
+            display: inline-block;
+            /* background: url(./images/1.jpg); */
+            /* color: purple; */
+            font-size: 100px;
+        }
+        /* .l{
             width: 105px;
             height: 130px;
             background: url(./images/1.jpg) no-repeat 0 -262px;
@@ -25,12 +54,17 @@
             width: 105px;
             height: 130px;
             background: url(./images/1.jpg) no-repeat -388px -136px;
-        } 
+        }  */
+        
     </style>
 </head>
 <body>
-    <span class="l">L</span>
+    <!-- <span class="l">L</span>
     <span class="j">J</span>
-    <span class="l">L</span>
+    <span class="l">L</span> -->
+    <!-- <span></span> -->
+    <span>&#xe602;</span>
+    <span>&#xe82f;</span>
+    
 </body>
 </html>

@@ -3,7 +3,7 @@
  * @Author: ljl
  * @Date: 2025-04-23 20:18:13
  * @LastEditors: rendc
- * @LastEditTime: 2025-04-23 20:18:18
+ * @LastEditTime: 2025-04-26 13:12:29
 -->
 # 【HTML5&CSS3提高】
 - [【HTML5\&CSS3提高】](#html5css3提高)
@@ -52,7 +52,7 @@ HTML5 的新增特性主要是针对于以前的不足，增加了一些新的标签、新的表单和新的表单属
 <div class=“footer”> </div>
 ```
 
-![](mark-img/20210422144246555.png)
+![](img/20210422144246555.png)
 
 - `<header>`：头部标签
 - `<nav>`：导航标签
@@ -101,7 +101,7 @@ HTML5 的新增特性主要是针对于以前的不足，增加了一些新的标签、新的表单和新的表单属
 </html>
 ```
 
-![](mark-img/20210422144908912.png)
+![](img/20210422144908912.png)
 
 ## 1.2 HTML5新增的多媒体标签
 
@@ -118,7 +118,7 @@ HTML5 在不使用插件的情况下，也可以原生的支持视频格式文件的播放。当然，支持的格式
 
 当前 `<video>` 元素支持三种视频格式：尽量使用 mp4 格式。
 
-![](mark-img/20210422150454844.png)
+![](img/20210422150454844.png)
 
 语法：
 
@@ -136,7 +136,7 @@ HTML5 在不使用插件的情况下，也可以原生的支持视频格式文件的播放。当然，支持的格式
 
 常见属性：
 
-![](mark-img/20210422150845591.png)
+![](img/20210422150845591.png)
 
 ```html
 <!doctype html>
@@ -158,7 +158,7 @@ HTML5 在不使用插件的情况下，也可以原生的支持视频格式文件的播放。当然，支持的格式
 </html>
 ```
 
-![](mark-img/20210422145552748.png)
+![](img/20210422145552748.png)
 
 以上视频会自动播放。
 
@@ -168,7 +168,7 @@ HTML5 在不使用插件的情况下，也可以原生的支持音频格式文件的播放。当然，支持的格式
 
 当前 `<audio>` 元素支持三种音频格式：尽量使用 mp3 格式。
 
-![](mark-img/20210422151256515.png)
+![](img/20210422151256515.png)
 
 语法：
 
@@ -186,7 +186,7 @@ HTML5 在不使用插件的情况下，也可以原生的支持音频格式文件的播放。当然，支持的格式
 
 常见属性：
 
-![](mark-img/20210422151722831.png)
+![](img/20210422151722831.png)
 
 ```html
 <!doctype html>
@@ -203,7 +203,7 @@ HTML5 在不使用插件的情况下，也可以原生的支持音频格式文件的播放。当然，支持的格式
 </html>
 ```
 
-![](mark-img/20210422145736892.png)
+![](img/20210422145736892.png)
 
 ### 1.2.3 多媒体标签总结
 
@@ -215,7 +215,7 @@ HTML5 在不使用插件的情况下，也可以原生的支持音频格式文件的播放。当然，支持的格式
 
 ## 1.3 HTML5新增的input类型
 
-![](mark-img/20210422152350339.png)
+![](img/20210422152350339.png)
 
 ```html
 <!doctype html>
@@ -249,33 +249,33 @@ HTML5 在不使用插件的情况下，也可以原生的支持音频格式文件的播放。当然，支持的格式
 </html>
 ```
 
-<img src="mark-img/20210422153038412.png" style="zoom:50%;" />
+<img src="img/20210422153038412.png" style="zoom:50%;" />
 
-<img src="mark-img/20210422153108799.png" style="zoom:50%;" />
+<img src="img/20210422153108799.png" style="zoom:50%;" />
 
-<img src="mark-img/20210422153142478.png" style="zoom:50%;" />
+<img src="img/20210422153142478.png" style="zoom:50%;" />
 
-<img src="mark-img/20210422153215652.png" style="zoom:50%;" />
+<img src="img/20210422153215652.png" style="zoom:50%;" />
 
 注意：HTML5 所提供的 input 类型可以依据具体的系统环境适配界面样式。
 
-<img src="mark-img/202104221541335.jpg" style="zoom:33%;" />
+<img src="img/202104221541335.jpg" style="zoom:33%;" />
 
-<img src="mark-img/20210422154149869.jpg" style="zoom:33%;" />
+<img src="img/20210422154149869.jpg" style="zoom:33%;" />
 
-<img src="mark-img/20210422154207436.jpg" style="zoom:33%;" />
+<img src="img/20210422154207436.jpg" style="zoom:33%;" />
 
-<img src="mark-img/20210422154222156.jpg" style="zoom:33%;" />
+<img src="img/20210422154222156.jpg" style="zoom:33%;" />
 
-<img src="mark-img/20210422154236689.jpg" style="zoom:33%;" />
+<img src="img/20210422154236689.jpg" style="zoom:33%;" />
 
 当为数值框时，输入法自动打开数字键盘！
 
-<img src="mark-img/20210422154252598.jpg" style="zoom:33%;" />
+<img src="img/20210422154252598.jpg" style="zoom:33%;" />
 
 ## 1.4 HTML5新增的表单属性
 
-![](mark-img/20210422155356572.png)
+![](img/20210422155356572.png)
 
 ```html
 <!doctype html>
@@ -303,7 +303,7 @@ HTML5 在不使用插件的情况下，也可以原生的支持音频格式文件的播放。当然，支持的格式
 </html>
 ```
 
-![](mark-img/202104221601401.gif)
+![](img/202104221601401.gif)
 
 ```html
 <!doctype html>
@@ -323,6 +323,7 @@ HTML5 在不使用插件的情况下，也可以原生的支持音频格式文件的播放。当然，支持的格式
 
 <body>
     <form action="">
+        <!-- autocomplete 提交记录显示 -->
         <input type="search" name="sear" id="one" required="required" placeholder="pink老师" autofocus="autofocus"
             autocomplete="on">
         <input type="submit" value="提交">
@@ -333,7 +334,7 @@ HTML5 在不使用插件的情况下，也可以原生的支持音频格式文件的播放。当然，支持的格式
 </html>
 ```
 
-![](mark-img/97f447da3ca0483f9358c26cf286aea5.gif)
+![](img/97f447da3ca0483f9358c26cf286aea5.gif)
 
 ```html
 <!doctype html>
@@ -345,6 +346,7 @@ HTML5 在不使用插件的情况下，也可以原生的支持音频格式文件的播放。当然，支持的格式
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>HTML5新增表单属性</title>
     <style>
+        /* placeholder 改颜色 */
         input::placeholder {
             color: hotpink;
         }
@@ -365,7 +367,7 @@ HTML5 在不使用插件的情况下，也可以原生的支持音频格式文件的播放。当然，支持的格式
 
 自动聚焦：
 
-![](mark-img/b903916cbc5d4dfeb5f21741362564ba.gif)
+![](img/b903916cbc5d4dfeb5f21741362564ba.gif)
 
 # 二、CSS3的新特性
 
@@ -456,7 +458,7 @@ CSS3 给我们新增了选择器，可以更加便捷，更加自由的选择目标元素。
 </html>
 ```
 
-![](mark-img/20210423145746508.gif)
+![](img/20210423145746508.gif)
 
 ### 2.2.2 结构伪类选择器
 
@@ -544,7 +546,7 @@ CSS3 给我们新增了选择器，可以更加便捷，更加自由的选择目标元素。
 </html>
 ```
 
-![](mark-img/20210423150342544.png)
+![](img/20210423150342544.png)
 
 ```html
 <!doctype html>
@@ -615,7 +617,7 @@ CSS3 给我们新增了选择器，可以更加便捷，更加自由的选择目标元素。
 </html>
 ```
 
-![](mark-img/20210423151246867.png)
+![](img/20210423151246867.png)
 
 ```html
 <!doctype html>
@@ -681,7 +683,7 @@ CSS3 给我们新增了选择器，可以更加便捷，更加自由的选择目标元素。
 </html>
 ```
 
-![](mark-img/20210423152631225.png)
+![](img/20210423152631225.png)
 
 ### 2.2.3 伪元素选择器（重点）
 
@@ -732,7 +734,7 @@ p::before {
 
 额外标签法也称为隔墙法，是 W3C 推荐的做法。
 
-![](mark-img/20210423160929744.png)
+![](img/20210423160929744.png)
 
 注意：要求这个新的空标签必须是块级元素。
 
@@ -800,7 +802,7 @@ p::before {
 </html>
 ```
 
-![](mark-img/20210423153316679.gif)
+![](img/20210423153316679.gif)
 
 ```html
 <!doctype html>
@@ -851,7 +853,7 @@ p::before {
 </html>
 ```
 
-![](mark-img/20210423153507576.png)
+![](img/20210423153507576.png)
 
 ```html
 <!doctype html>
@@ -905,7 +907,7 @@ p::before {
 </html>
 ```
 
-![](mark-img/20210423153911315.gif)
+![](img/20210423153911315.gif)
 
 ## 2.3 CSS3盒子模型
 
@@ -964,11 +966,11 @@ CSS3 中可以通过 box-sizing 来指定盒模型，有 2 个值：即可指定为 content-box、bord
 </html>
 ```
 
-<img src="mark-img/20210423154934685.gif" style="zoom:50%;" />
+<img src="img/20210423154934685.gif" style="zoom:50%;" />
 
-![](mark-img/image-20220117012150036.png)
+![](img/image-20220117012150036.png)
 
-![image-20220117012211829](mark-img/image-20220117012211829.png)
+![image-20220117012211829](img/image-20220117012211829.png)
 
 ## 2.4 CSS3其他特性（了解）
 
@@ -1000,7 +1002,7 @@ CSS3 中可以通过 box-sizing 来指定盒模型，有 2 个值：即可指定为 content-box、bord
 </html>
 ```
 
-![](mark-img/20210423155143395.gif)
+![](img/20210423155143395.gif)
 
 ```html
 <!doctype html>
@@ -1035,7 +1037,7 @@ CSS3 中可以通过 box-sizing 来指定盒模型，有 2 个值：即可指定为 content-box、bord
 </html>
 ```
 
-<img src="mark-img/20210423155710297-164235395082836.png" style="zoom:50%;" />
+<img src="img/20210423155710297-164235395082836.png" style="zoom:50%;" />
 
 ### 2.4.1 CSS3滤镜 filter
 
@@ -1045,7 +1047,7 @@ filter CSS 属性将模糊或颜色偏移等图形效果应用于元素。
 filter: 函数(); 例如：filter: blur(5px); blur 模糊处理，数值越大越模糊
 ```
 
-![](mark-img/20210423161020807.png)
+![](img/20210423161020807.png)
 
 ### 2.4.2 CSS3 calc 函数
 
@@ -1080,7 +1082,7 @@ transition: 要过渡的属性 花费时间 运动曲线 何时开始;
 3. 运动曲线：默认是 `ease`（可以省略）
 4. 何时开始：单位是秒（必须写单位）可以设置延迟触发时间默认是 `0s`（可以省略）
 
-<img src="mark-img/2021042316110482.png" style="zoom: 25%;" />
+<img src="img/2021042316110482.png" style="zoom: 25%;" />
 
 记住过渡的使用口诀：**谁做过渡给谁加！**
 
@@ -1120,7 +1122,7 @@ transition: 要过渡的属性 花费时间 运动曲线 何时开始;
 </html>
 ```
 
-![](mark-img/20210423160022413.gif)
+![](img/20210423160022413.gif)
 
 ### 2.5.2 进度条案例
 
@@ -1163,7 +1165,7 @@ transition: 要过渡的属性 花费时间 运动曲线 何时开始;
 </html>
 ```
 
-![](mark-img/20210423160237686.gif)
+![](img/20210423160237686.gif)
 
 ## 2.6 CSS3 变量
 
@@ -1336,11 +1338,11 @@ button {
 
 1. HTML5 结构本身
 
-   ![](mark-img/20210423162839681.png)
+   ![](img/20210423162839681.png)
 
 2. CSS3 相关样式
 
-   ![](mark-img/20210423162919534.png)
+   ![](img/20210423162919534.png)
 
 # 四、广义的 HTML5
 

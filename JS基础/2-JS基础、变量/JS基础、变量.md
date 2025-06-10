@@ -6,6 +6,7 @@
  * @LastEditTime: 2025-05-16 10:27:46
 -->
 # 【JavaScript基础、变量、数据类型】
+> 以下内容出自Jerry Zhou.（周吉瑞），借用学习
 
 # 一、初识 JavaScript
 

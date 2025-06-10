@@ -3,7 +3,7 @@
  * @Author: ljl
  * @Date: 2025-05-19 09:16:56
  * @LastEditors: rendc
- * @LastEditTime: 2025-05-19 09:18:29
+ * @LastEditTime: 2025-06-04 15:34:35
 -->
 # 【BOM】
 
@@ -84,6 +84,8 @@ var scrollTop = window.scrollY || document.documentElement.scrollTop;
 
 # 九、Navigator对象
 
+navigator是对象，该对象下记录了浏览器自身的相关信息。
+ 
 `window.navigator` 属性可以检索 navigator 对象，它内部含有用户此次活动的浏览器的相关属性和标识。
 
 | 属性         | 意义                                       |
@@ -116,6 +118,24 @@ var scrollTop = window.scrollY || document.documentElement.scrollTop;
 
 ![](mark-img/ee10e3c3552940359198256a6304d806.png)
 
+ 
+常用属性和方法：
+ 
+- 通过 userAgent 检测浏览器的版本及平台
+ 
+```javascript
+// 检测 userAgent（浏览器信息）
+(function () {
+  const userAgent = navigator.userAgent
+  // 验证是否为Android或iPhone
+  const android = userAgent.match(/(Android);?[\s\/]+([\d.]+)?/)
+  const iphone = userAgent.match(/(iPhone\sOS)\s([\d_]+)/)
+  // 如果是Android或iPhone，则跳转至移动站点
+  if (android || iphone) {
+    location.href = 'http://m.itcast.cn'
+  }})();
+```
+
 # 十、识别用户浏览器品牌
 
 识别用户浏览器品牌通常使用 `navigator.userAgent` 属性。
@@ -132,21 +152,73 @@ if (sUsrAg.indexOf("Firefox") > -1) {
 }
 ```
 
+# 定时器-延迟函数
+ 
+JavaScript 内置的一个用来让代码延迟执行的函数，叫 setTimeout
+ 
+**语法：**
+ 
+```JavaScript
+setTimeout(回调函数, 延迟时间)
+```
+ 
+setTimeout 仅仅只执行一次，所以可以理解为就是把一段代码延迟执行, 平时省略window
+ 
+间歇函数 setInterval : 每隔一段时间就执行一次， , 平时省略window
+ 
+清除延时函数：
+ 
+```JavaScript
+clearTimeout(timerId)
+```
+ 
+>注意点
+>
+>1. 延时函数需要等待,所以后面的代码先执行
+>2. 返回值是一个正整数，表示定时器的编号
+ 
+```html
+<body>
+  <script>
+    // 定时器之延迟函数
+ 
+    // 1. 开启延迟函数
+    let timerId = setTimeout(function () {
+      console.log('我只执行一次')
+    }, 3000)
+ 
+    // 1.1 延迟函数返回的还是一个正整数数字，表示延迟函数的编号
+    console.log(timerId)
+ 
+    // 1.2 延迟函数需要等待时间，所以下面的代码优先执行
+ 
+    // 2. 关闭延迟函数
+    clearTimeout(timerId)
+ 
+  </script>
+</body>
+```
+
 # 十一、History对象
+
+history (历史)是对象，主要管理历史记录， 该对象与浏览器地址栏的操作相对应，如前进、后退等
+ 
+**使用场景**
+ 
+history对象一般在实际开发中比较少用，但是会在一些OA 办公系统中见到。
+ 
+ ![](mark-img/1676047834796.png)
+ 
+常见方法：
+ 
+ ![](mark-img/1676047846593.png)
 
 `window.history` 对象提供了操作浏览器会话历史的接口。
 
 常用操作就是模拟浏览器回退按钮。
 
-```javascript
-history.back();	// 等同于点击浏览器的回退按钮
-history.go(-1);	// 等同于 history.back();
-```
 
 【案例】
-
-- temp.html
-
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -158,39 +230,24 @@ history.go(-1);	// 等同于 history.back();
 </head>
 
 <body>
-    <h1>我是temp网页</h1>
-    <a href="history方法.html">去看history方法页面</a>
-</body>
-
-</html>
-```
-
-- history.html
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <h1>我是history方法网页</h1>
-    <button id="btn">回退</button>
-    <!--  链接可以使用内嵌 javascript 脚本的方式 -->
-    <a href="javascript:history.back();">链接：回退</a>
-
-    <script>
-        var btn = document.getElementById('btn');
-
-        btn.onclick = function () {
-            // history.back();
-            history.go(-1);
-        };
-    </script>
+  <button class="back">←后退</button>
+  <button class="forward">前进→</button>
+  <script>
+    // histroy对象
+ 
+    // 1.前进
+    const forward = document.querySelector('.forward')
+    forward.addEventListener('click', function () {
+      // history.forward() 
+      history.go(1)
+    })
+    // 2.后退
+    const back = document.querySelector('.back')
+    back.addEventListener('click', function () {
+      // history.back()
+      history.go(-1)
+    })
+  </script>
 </body>
 
 </html>
@@ -205,6 +262,46 @@ history.go(-1);	// 等同于 history.back();
 ```javascript
 window.locaiton = 'http://www.imooc.com';
 window.location.href = 'http://www.imooc.com';
+```
+ 
+location (地址) 它拆分并保存了 URL 地址的各个组成部分， 它是一个对象
+ 
+| 属性/方法 | 说明                                                 |
+| --------- | ---------------------------------------------------- |
+| href      | 属性，获取完整的 URL 地址，赋值时用于地址的跳转      |
+| search    | 属性，获取地址中携带的参数，符号 ？后面部分          |
+| hash      | 属性，获取地址中的啥希值，符号 # 后面部分            |
+| reload()  | 方法，用来刷新当前页面，传入参数 true 时表示强制刷新 |
+ 
+```html
+<body>
+  <form>
+    <input type="text" name="search"> <button>搜索</button>
+  </form>
+  <a href="#/music">音乐</a>
+  <a href="#/download">下载</a>
+ 
+  <button class="reload">刷新页面</button>
+  <script>
+    // location 对象  
+    // 1. href属性 （重点） 得到完整地址，赋值则是跳转到新地址
+    console.log(location.href)
+    // location.href = 'http://www.itcast.cn'
+ 
+    // 2. search属性  得到 ? 后面的地址 
+    console.log(location.search)  // ?search=笔记本
+ 
+    // 3. hash属性  得到 # 后面的地址
+    console.log(location.hash)
+ 
+    // 4. reload 方法  刷新页面
+    const btn = document.querySelector('.reload')
+    btn.addEventListener('click', function () {
+      // location.reload() // 页面刷新
+      location.reload(true) // 强制页面刷新 ctrl+f5
+    })
+  </script>
+</body>
 ```
 
 # 十三、重新加载当前页面
@@ -246,6 +343,136 @@ window.location.reload(true);
 
 </html>
 ```
+
+ 
+
+ 
+## 本地存储（今日重点）
+ 
+本地存储：将数据存储在本地浏览器中
+ 
+常见的使用场景：
+ 
+<https://todomvc.com/examples/vanilla-es6/>    页面刷新数据不丢失
+ 
+好处：
+ 
+1、页面刷新或者关闭不丢失数据，实现数据持久化
+ 
+2、容量较大，sessionStorage和 localStorage 约 5M 左右
+ 
+###  localStorage（重点）
+ 
+**作用:** 数据可以长期保留在本地浏览器中，刷新页面和关闭页面，数据也不会丢失
+ 
+**特性：**以键值对的形式存储，并且存储的是字符串， 省略了window
+ 
+![67604963508](assets/1676049635087.png)
+ 
+```html
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>本地存储-localstorage</title>
+</head>
+ 
+<body>
+  <script>
+    // 本地存储 - localstorage 存储的是字符串 
+    // 1. 存储
+    localStorage.setItem('age', 18)
+ 
+    // 2. 获取
+    console.log(typeof localStorage.getItem('age'))
+ 
+    // 3. 删除
+    localStorage.removeItem('age')
+  </script>
+</body>
+ 
+</html>
+```
+ 
+### sessionStorage（了解）
+ 
+特性：
+ 
+- 用法跟localStorage基本相同
+- 区别是：当页面浏览器被关闭时，存储在 sessionStorage 的数据会被清除
+ 
+存储：sessionStorage.setItem(key,value)
+ 
+获取：sessionStorage.getItem(key)
+ 
+删除：sessionStorage.removeItem(key)
+ 
+### localStorage 存储复杂数据类型
+ 
+**问题：**本地只能存储字符串,无法存储复杂数据类型.
+ 
+**解决：**需要将复杂数据类型转换成 JSON字符串,在存储到本地
+ 
+**语法：**JSON.stringify(复杂数据类型)
+ 
+JSON字符串：
+ 
+- 首先是1个字符串
+- 属性名使用双引号引起来，不能单引号
+- 属性值如果是字符串型也必须双引号
+ 
+```html
+<body>
+  <script>
+    // 本地存储复杂数据类型
+    const goods = {
+      name: '小米',
+      price: 1999
+    }
+    // localStorage.setItem('goods', goods)
+    // console.log(localStorage.getItem('goods'))
+ 
+    // 1. 把对象转换为JSON字符串  JSON.stringify
+    localStorage.setItem('goods', JSON.stringify(goods))
+    // console.log(typeof localStorage.getItem('goods'))
+ 
+  </script>
+</body>
+```
+ 
+ 
+ 
+**问题：**因为本地存储里面取出来的是字符串，不是对象，无法直接使用
+ 
+**解决： **把取出来的字符串转换为对象
+ 
+**语法：**JSON.parse(JSON字符串)
+ 
+```html
+<body>
+  <script>
+    // 本地存储复杂数据类型
+    const goods = {
+      name: '小米',
+      price: 1999
+    }
+    // localStorage.setItem('goods', goods)
+    // console.log(localStorage.getItem('goods'))
+ 
+    // 1. 把对象转换为JSON字符串  JSON.stringify
+    localStorage.setItem('goods', JSON.stringify(goods))
+    // console.log(typeof localStorage.getItem('goods'))
+ 
+    // 2. 把JSON字符串转换为对象  JSON.parse
+    console.log(JSON.parse(localStorage.getItem('goods')))
+ 
+  </script>
+</body>
+```
+ 
 
 # 十四、GET请求查询参数
 

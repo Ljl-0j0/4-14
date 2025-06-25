@@ -1,0 +1,42 @@
+{
+/*
+  include： 用来指定那些ts文件需要编译
+    ** 表示任意目录
+     * 表示任意文件  
+  exclude： 用来指定那些文件不需要编译
+  extends： 用来继承其他tsconfig.json文件
+
+  files: 用来指定那些文件需要编译 （文件小的地方）
+  
+  compilerOptions： 用来指定编译选项
+    target： 用来指定编译之后的js版本
+    module： 用来指定编译之后的模块化规范
+    outDir： 用来指定编译之后的目录
+    outFile： 合并所有文件到一个文件中
+
+    strict： 用来指定是否开启严格模式
+    alwaysStrict： 用来指定是否总是开启严格模式
+
+    noImplicitAny： 用来指定是否允许隐式any类型 
+
+    noImplicitThis： 用来指定是否允许隐式this类型
+
+    strictNullChecks： 用来指定是否开启严格空检查
+    
+    lib： 用来指定编译之后的代码所依赖的库
+    
+    allowJs： 用来指定是否允许编译js文件
+    checkJs： 用来指定是否检查js文件是否符合规范
+    removeComments： 用来指定是否移除注释
+
+    noEmit： 用来指定是否生成js文件
+    noEmitOnError： 用来指定是否在编译出错的时候不生成js文件
+
+*/
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "strict": true
+  }
+}
